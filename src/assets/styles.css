@@ -1,3 +1,11 @@
+.main-container {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .framer-div {
   background-color: aquamarine;
   border-radius: 50%;

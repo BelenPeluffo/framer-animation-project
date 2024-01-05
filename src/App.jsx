@@ -1,16 +1,9 @@
 import FirstMotionComponent from "./components/FirstMotionComponent";
+import "./assets/styles.css";
 
 function App() {
   return (
-    <div
-      style={{
-        width: "100vw",
-        height: "90vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
+    <div className="main-container">
       <FirstMotionComponent />
     </div>
   );
