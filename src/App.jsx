@@ -21,7 +21,11 @@ function App() {
           key={pathname}
           // Animations will change, but here's the start set-up
           variants={{
-            initial: { x: pathname.includes("first") ? 1000 : -1000 },
+            initial: {
+              x: pathname.includes("first") ? 1000 : -1000,
+              height: "100%",
+              width: "100%",
+            },
             animate: { x: 0 },
             exit: {
               transition: {
@@ -33,6 +37,7 @@ function App() {
           initial="initial"
           animate="animate"
           exit="exit"
+          style={{ height: "100%", width: "100%" }}
         >
           {pathname === "/" ? <Home /> : <Outlet />}
         </motion.div>
