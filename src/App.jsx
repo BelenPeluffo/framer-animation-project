@@ -1,18 +1,35 @@
 import "./assets/styles.css";
-import { AnimatePresence } from "framer-motion";
-import { Outlet, useNavigate } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
 function App() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const pathname = location.pathname;
+
   const handleClick = () => {
-    navigate('/second-component');
-  }
+    navigate(pathname.includes("second") ? "/first-component" : "/second-component");
+  };
   return (
     <div className="main-container">
-      <AnimatePresence>
-        <Outlet />
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={pathname}
+          variants={{
+            initial: { x: -1000 },
+            animate: { x: 0 },
+            exit: { transition: { x: -1000 } },
+          }}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+        >
+          <Outlet />
+        </motion.div>
       </AnimatePresence>
-      <button style={{margin: 20}} onClick={handleClick}>Let's go!</button>
+      <button style={{ margin: 20 }} onClick={handleClick}>
+        {pathname.includes('first') ? "Let's go!" : "Go back!"}
+      </button>
     </div>
   );
 }
