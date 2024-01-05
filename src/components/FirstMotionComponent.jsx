@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { PropTypes } from "prop-types";
 import "../assets/styles.css";
 
 const FirstMotionComponent = ({text}) => {
@@ -19,5 +20,9 @@ const FirstMotionComponent = ({text}) => {
     </motion.div>
   );
 };
+
+FirstMotionComponent.propTypes = {
+    text: PropTypes.string,
+}
 
 export default FirstMotionComponent;
