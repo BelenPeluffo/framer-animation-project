@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import "../assets/styles.css";
 
-const FirstMotionComponent = () => {
+const FirstMotionComponent = ({text}) => {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
@@ -18,7 +18,7 @@ const FirstMotionComponent = () => {
         },
       }}
     >
-      <h1 className="title">This is where it all starts.</h1>
+      <h1 className="title">{text}</h1>
     </motion.div>
   );
 };
