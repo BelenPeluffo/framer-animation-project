@@ -1,8 +1,7 @@
-# React + Vite
+# This is where it all starts
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The basic idea is to creat an app that shows you data of k-pop idols in an interactive way.
 
-Currently, two official plugins are available:
+The layout would be like a Prezy canvas where you have all these circles and when you click on any of them, you'll be shown the data for that circle after some cool animations.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The app will accept key and, in the future, mouse gestures, also.
