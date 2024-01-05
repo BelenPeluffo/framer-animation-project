@@ -1,9 +1,19 @@
+import FirstMotionComponent from "./components/FirstMotionComponent";
+
 function App() {
   return (
-    <>
-      This is where it all starts.
-    </>
-  )
+    <div
+      style={{
+        width: "100vw",
+        height: "90vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <FirstMotionComponent />
+    </div>
+  );
 }
 
-export default App
+export default App;
