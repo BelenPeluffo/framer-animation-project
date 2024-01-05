@@ -9,10 +9,8 @@ const FirstMotionComponent = () => {
       transition={{ duration: 1, delay: 0.5 }}
       className="framer-div"
       whileHover={{
-        scale: [1, 1.05, 1],
-        // duration: 0.25,
+        scale: [1, 1.05, 1], // this exact succession of values is what garantees that the motion will be like the object is breathing instead of beating, like a heart.
         transition: {
-        //   duration: 0.5,
           type: "keyframes",
           repeat: Infinity,
           delay: 0.25,
