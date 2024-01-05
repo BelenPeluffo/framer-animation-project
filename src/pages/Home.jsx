@@ -78,7 +78,13 @@ const Home = () => {
           </div>
           <div className="subtitle">are you looking for today?</div>
         </div>
-        <div>Seach bar per se</div>
+        <div>
+          <input
+            className="search-bar"
+            type="search"
+            placeholder="Let's look it up!"
+          />
+        </div>
         <div style={{ marginBottom: 5, marginTop: 5, display: "flex", gap: 5 }}>
           <button onClick={() => navigate("/groups")}>GROUPS</button>
           <button onClick={() => navigate("/idols")}>IDOLS</button>
