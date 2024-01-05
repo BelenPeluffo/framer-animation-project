@@ -42,13 +42,15 @@ function App() {
           {pathname === "/" ? <Home /> : <Outlet />}
         </motion.div>
       </AnimatePresence>
-      <BottomBar
-        actions={[
-          <button key="move" style={{ margin: 20 }} onClick={handleClick}>
-            {pathname.includes("first") ? "Let's go!" : "Go back!"}
-          </button>,
-        ]}
-      />
+      {pathname !== "/" && (
+        <BottomBar
+          actions={[
+            <button key="move" style={{ margin: 20 }} onClick={handleClick}>
+              {pathname.includes("first") ? "Let's go!" : "Go back!"}
+            </button>,
+          ]}
+        />
+      )}
     </div>
   );
 }
