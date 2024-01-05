@@ -22,3 +22,10 @@
   font-size: 400%;
   text-align: center;
 }
+
+.bottom-bar {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%);
+}

@@ -1,7 +1,7 @@
 import { PropTypes } from "prop-types";
 
 const BottomBar = ({ actions }) => {
-  return <div>{actions.map((action) => action)}</div>;
+  return <div className="bottom-bar">{actions.map((action) => action)}</div>;
 };
 
 BottomBar.propTypes = {
