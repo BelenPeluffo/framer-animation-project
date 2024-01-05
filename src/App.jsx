@@ -2,6 +2,7 @@ import "./assets/styles.css";
 import { AnimatePresence, motion } from "framer-motion";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import BottomBar from "./components/BottomBar";
+import Home from "./pages/Home";
 
 function App() {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ function App() {
           animate="animate"
           exit="exit"
         >
-          <Outlet />
+          {pathname === "/" ? <Home /> : <Outlet />}
         </motion.div>
       </AnimatePresence>
       <BottomBar
