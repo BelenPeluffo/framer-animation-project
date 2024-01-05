@@ -2,7 +2,7 @@ import { PropTypes } from "prop-types";
 import FirstMotionComponent from "./FirstMotionComponent";
 import { useEffect, useState } from "react";
 
-const CategoryContainer = ({ category }) => {
+const ItemsContainer = ({ category, size }) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -16,15 +16,18 @@ const CategoryContainer = ({ category }) => {
       <div style={{ height: "30%" }}>{category}</div>
       <div style={{ height: "70%" }}>
         {items.map((item) => (
-          <FirstMotionComponent key={item.name} text={item.name} />
+          <FirstMotionComponent key={item.name} text={item.name} size="small" />
         ))}
       </div>
     </div>
   );
 };
 
-CategoryContainer.propTypes = {
+const containerSizes = ["page", "section"];
+
+ItemsContainer.propTypes = {
   category: PropTypes.string.required,
+  size: PropTypes.oneOf(containerSizes).string,
 };
 
-export default CategoryContainer;
+export default ItemsContainer;
