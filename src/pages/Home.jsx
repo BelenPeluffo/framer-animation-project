@@ -1,7 +1,9 @@
 import { animate, useMotionValue, useTransform, motion } from "framer-motion";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
   const categoryIndex = useMotionValue(0);
   const categories = [
     "{카테고리}",
@@ -77,6 +79,10 @@ const Home = () => {
           <div className="subtitle">are you looking for today?</div>
         </div>
         <div>Seach bar per se</div>
+        <div style={{ marginBottom: 5, marginTop: 5, display: "flex", gap: 5 }}>
+          <button onClick={() => navigate("/groups")}>GROUPS</button>
+          <button onClick={() => navigate("/idols")}>IDOLS</button>
+        </div>
       </div>
       <div style={{ height: "40%", margin: 20, padding: 5 }}>
         Search results
