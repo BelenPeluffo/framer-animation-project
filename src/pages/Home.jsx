@@ -1,11 +1,23 @@
 import { animate, useMotionValue, useTransform, motion } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ItemsContainer from "../components/CategoryContainer";
 import { getItems } from "../services/MockServices";
 
 const Home = () => {
   const navigate = useNavigate();
+  // this one will have to be another fetch result based on users search history
+  const lastSearchedItems = [{ name: "Soyeon" }];
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchResult, setSearchResult] = useState([]);
+
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+    // here's where the fetch method will go
+    const response = getItems();
+    setSearchResult(response);
+  };
+
   const categoryIndex = useMotionValue(0);
   const categories = [
     "{카테고리}",
@@ -29,7 +41,6 @@ const Home = () => {
     baseText.get().slice(0, index)
   );
   const updateCategory = useMotionValue(true);
-  const lastSearchedItems = getItems();
 
   useEffect(() => {
     animate(count, 30, {
@@ -86,6 +97,8 @@ const Home = () => {
             className="search-bar"
             type="search"
             placeholder="Let's look it up!"
+            value={searchTerm}
+            onChange={(event) => handleSearch(event.target.value)}
           />
         </div>
         <div style={{ marginBottom: 5, marginTop: 5, display: "flex", gap: 5 }}>
@@ -94,7 +107,7 @@ const Home = () => {
         </div>
       </div>
       <div style={{ height: "40%", margin: 20, padding: 5 }}>
-        <ItemsContainer items={lastSearchedItems} />
+        <ItemsContainer items={searchTerm ? searchResult : lastSearchedItems} />
       </div>
     </div>
   );
