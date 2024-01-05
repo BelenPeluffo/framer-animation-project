@@ -1,7 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "../App";
 import FirstMotionComponent from "../components/FirstMotionComponent";
-import ItemContainer from "../components/CategoryContainer";
+import Groups from "../pages/Groups";
+import Idols from "../pages/Idols";
 
 const AppRouter = () => {
   return (
@@ -22,11 +23,11 @@ const AppRouter = () => {
           />
           <Route
             path="/groups"
-            element={<ItemContainer category="Groups" />}
+            element={<Groups />}
           />
           <Route
             path="/members"
-            element={<ItemContainer category="Members" />}
+            element={<Idols />}
           />
         </Route>
       </Routes>
