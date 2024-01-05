@@ -1,6 +1,7 @@
 import { animate, useMotionValue, useTransform, motion } from "framer-motion";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import ItemsContainer from "../components/CategoryContainer";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -91,7 +92,7 @@ const Home = () => {
         </div>
       </div>
       <div style={{ height: "40%", margin: 20, padding: 5 }}>
-        Search results
+        <ItemsContainer />
       </div>
     </div>
   );
