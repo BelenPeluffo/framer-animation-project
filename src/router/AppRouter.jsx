@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "../App";
 import FirstMotionComponent from "../components/FirstMotionComponent";
+import CategoryContainer from "../components/CategoryContainer";
 
 const AppRouter = () => {
   return (
@@ -18,6 +19,14 @@ const AppRouter = () => {
             element={
               <FirstMotionComponent text="This is where it all continues." />
             }
+          />
+          <Route
+            path="/groups"
+            element={<CategoryContainer category="Groups" />}
+          />
+          <Route
+            path="/members"
+            element={<CategoryContainer category="Members" />}
           />
         </Route>
       </Routes>
