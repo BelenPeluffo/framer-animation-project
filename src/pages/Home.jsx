@@ -2,6 +2,7 @@ import { animate, useMotionValue, useTransform, motion } from "framer-motion";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ItemsContainer from "../components/CategoryContainer";
+import { getItems } from "../services/MockServices";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -28,6 +29,7 @@ const Home = () => {
     baseText.get().slice(0, index)
   );
   const updateCategory = useMotionValue(true);
+  const lastSearchedItems = getItems();
 
   useEffect(() => {
     animate(count, 30, {
@@ -92,7 +94,7 @@ const Home = () => {
         </div>
       </div>
       <div style={{ height: "40%", margin: 20, padding: 5 }}>
-        <ItemsContainer />
+        <ItemsContainer items={lastSearchedItems} />
       </div>
     </div>
   );
