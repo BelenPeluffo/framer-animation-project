@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "../App";
 import FirstMotionComponent from "../components/FirstMotionComponent";
-import CategoryContainer from "../components/CategoryContainer";
+import ItemContainer from "../components/CategoryContainer";
 
 const AppRouter = () => {
   return (
@@ -11,22 +11,22 @@ const AppRouter = () => {
           <Route
             path="/first-component"
             element={
-              <FirstMotionComponent text="This is where it all starts." />
+              <FirstMotionComponent text="This is where it all starts." size="big" />
             }
           />
           <Route
             path="/second-component"
             element={
-              <FirstMotionComponent text="This is where it all continues." />
+              <FirstMotionComponent text="This is where it all continues." size="big" />
             }
           />
           <Route
             path="/groups"
-            element={<CategoryContainer category="Groups" />}
+            element={<ItemContainer category="Groups" />}
           />
           <Route
             path="/members"
-            element={<CategoryContainer category="Members" />}
+            element={<ItemContainer category="Members" />}
           />
         </Route>
       </Routes>
