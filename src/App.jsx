@@ -1,6 +1,7 @@
 import "./assets/styles.css";
 import { AnimatePresence, motion } from "framer-motion";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import BottomBar from "./components/BottomBar";
 
 function App() {
   const navigate = useNavigate();
@@ -8,17 +9,25 @@ function App() {
   const pathname = location.pathname;
 
   const handleClick = () => {
-    navigate(pathname.includes("second") ? "/first-component" : "/second-component");
+    navigate(
+      pathname.includes("second") ? "/first-component" : "/second-component"
+    );
   };
   return (
     <div className="main-container">
       <AnimatePresence mode="wait">
         <motion.div
           key={pathname}
+          // Animations will change, but here's the start set-up
           variants={{
-            initial: { x: -1000 },
+            initial: { x: pathname.includes("first") ? 1000 : -1000 },
             animate: { x: 0 },
-            exit: { transition: { x: -1000 } },
+            exit: {
+              transition: {
+                x: pathname.includes("first") ? 1000 : -1000,
+                type: "spring",
+              },
+            },
           }}
           initial="initial"
           animate="animate"
@@ -27,9 +36,13 @@ function App() {
           <Outlet />
         </motion.div>
       </AnimatePresence>
-      <button style={{ margin: 20 }} onClick={handleClick}>
-        {pathname.includes('first') ? "Let's go!" : "Go back!"}
-      </button>
+      <BottomBar
+        actions={[
+          <button key="move" style={{ margin: 20 }} onClick={handleClick}>
+            {pathname.includes("first") ? "Let's go!" : "Go back!"}
+          </button>,
+        ]}
+      />
     </div>
   );
 }
