@@ -3,7 +3,7 @@ import { PropTypes } from "prop-types";
 import { useNavigate } from "react-router-dom";
 import "../assets/styles.css";
 
-const FirstMotionComponent = ({ text, size, item }) => {
+const FirstMotionComponent = ({ size, item }) => {
   const navigate = useNavigate();
 
   const handleNavigation = () => {
@@ -24,7 +24,8 @@ const FirstMotionComponent = ({ text, size, item }) => {
       }}
       onClick={handleNavigation}
     >
-      <div className={size === "big" ? "title" : "text"}>{text}</div>
+      {/* Here we could add a Link element instead, so that the URL would be shown on the browser when hovering over */}
+      <div className={size === "big" ? "title" : "text"}>{item.name}</div>
     </motion.div>
   );
 };
@@ -32,7 +33,11 @@ const FirstMotionComponent = ({ text, size, item }) => {
 FirstMotionComponent.propTypes = {
   text: PropTypes.string,
   size: PropTypes.string,
-  item: PropTypes.object.required,
+  item: PropTypes.shape({
+    name: PropTypes.string.required,
+    type: PropTypes.string.required,
+    id: PropTypes.number.required,
+  }).required,
 };
 
 export default FirstMotionComponent;
