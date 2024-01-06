@@ -1,8 +1,15 @@
 import { motion } from "framer-motion";
 import { PropTypes } from "prop-types";
+import { useNavigate } from "react-router-dom";
 import "../assets/styles.css";
 
-const FirstMotionComponent = ({ text, size }) => {
+const FirstMotionComponent = ({ text, size, item }) => {
+  const navigate = useNavigate();
+
+  const handleNavigation = () => {
+    navigate(`/${item.type == "group" ? "groups" : "idols"}/${item.id}`);
+  };
+
   return (
     <motion.div
       className={`item-circle ${size}`}
@@ -15,6 +22,7 @@ const FirstMotionComponent = ({ text, size }) => {
           duration: 1,
         },
       }}
+      onClick={handleNavigation}
     >
       <div className={size === "big" ? "title" : "text"}>{text}</div>
     </motion.div>
@@ -24,6 +32,7 @@ const FirstMotionComponent = ({ text, size }) => {
 FirstMotionComponent.propTypes = {
   text: PropTypes.string,
   size: PropTypes.string,
+  item: PropTypes.object.required,
 };
 
 export default FirstMotionComponent;
