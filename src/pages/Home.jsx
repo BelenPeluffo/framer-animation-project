@@ -7,7 +7,7 @@ import { getItems } from "../services/MockServices";
 const Home = () => {
   const navigate = useNavigate();
   // this one will have to be another fetch result based on users search history
-  const lastSearchedItems = [{ name: "Soyeon" }];
+  const lastSearchedItems = [getItems()[0]];
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResult, setSearchResult] = useState([]);
 
