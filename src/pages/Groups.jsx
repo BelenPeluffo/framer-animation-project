@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import ItemsContainer from "../components/CategoryContainer";
+import ItemsContainer from "../components/ItemsContainer";
 import { getItems } from "../services/MockServices";
 
 const Groups = () => {

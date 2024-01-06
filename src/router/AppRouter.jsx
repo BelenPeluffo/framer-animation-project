@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "../App";
-import FirstMotionComponent from "../components/FirstMotionComponent";
+import IdentityIcon from "../components/IdentityIcon";
 import Groups from "../pages/Groups";
 import Idols from "../pages/Idols";
 
@@ -12,7 +12,7 @@ const AppRouter = () => {
           <Route
             path="/first-component"
             element={
-              <FirstMotionComponent
+              <IdentityIcon
                 text="This is where it all starts."
                 size="big"
               />
@@ -21,7 +21,7 @@ const AppRouter = () => {
           <Route
             path="/second-component"
             element={
-              <FirstMotionComponent
+              <IdentityIcon
                 text="This is where it all continues."
                 size="big"
               />

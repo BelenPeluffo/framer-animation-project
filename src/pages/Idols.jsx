@@ -1,4 +1,4 @@
-import ItemsContainer from "../components/CategoryContainer";
+import ItemsContainer from "../components/ItemsContainer";
 
 const Idols = () => {
   return <ItemsContainer items="Members" />;

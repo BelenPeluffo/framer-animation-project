@@ -1,5 +1,5 @@
 import { PropTypes } from "prop-types";
-import FirstMotionComponent from "./FirstMotionComponent";
+import IdentityIcon from "./IdentityIcon";
 
 const ItemsContainer = ({ title, items, logo }) => {
   return (
@@ -21,7 +21,7 @@ const ItemsContainer = ({ title, items, logo }) => {
       )}
       <div style={{ height: "70%", display: "flex", gap: 10 }}>
         {items.map((item) => (
-          <FirstMotionComponent key={item.name} item={item} size="small" />
+          <IdentityIcon key={item.name} item={item} size="small" />
         ))}
       </div>
     </div>

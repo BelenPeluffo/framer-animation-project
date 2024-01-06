@@ -3,7 +3,7 @@ import { PropTypes } from "prop-types";
 import { useNavigate } from "react-router-dom";
 import "../assets/styles.css";
 
-const FirstMotionComponent = ({ size, item }) => {
+const IdentityIcon = ({ size, item }) => {
   const navigate = useNavigate();
 
   const handleNavigation = () => {
@@ -30,7 +30,7 @@ const FirstMotionComponent = ({ size, item }) => {
   );
 };
 
-FirstMotionComponent.propTypes = {
+IdentityIcon.propTypes = {
   text: PropTypes.string,
   size: PropTypes.string,
   item: PropTypes.shape({
@@ -40,4 +40,4 @@ FirstMotionComponent.propTypes = {
   }).required,
 };
 
-export default FirstMotionComponent;
+export default IdentityIcon;
