@@ -12,25 +12,21 @@ const AppRouter = () => {
           <Route
             path="/first-component"
             element={
-              <IdentityIcon
-                text="This is where it all starts."
-                size="big"
-              />
+              <IdentityIcon text="This is where it all starts." size="big" />
             }
           />
           <Route
             path="/second-component"
             element={
-              <IdentityIcon
-                text="This is where it all continues."
-                size="big"
-              />
+              <IdentityIcon text="This is where it all continues." size="big" />
             }
           />
           <Route path="/groups" element={<Groups />}>
             <Route path="/groups/:id" element={<Groups />} />
           </Route>
-          <Route path="/members" element={<Idols />} />
+          <Route path="/idols" element={<Idols />}>
+            <Route path="/idols/:id" element={<Idols />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>
