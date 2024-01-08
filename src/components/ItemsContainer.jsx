@@ -1,11 +1,11 @@
 import { PropTypes } from "prop-types";
 import IdentityIcon from "./IdentityIcon";
 
-const ItemsContainer = ({ title, items, logo }) => {
+const ItemsContainer = ({ title, items, img }) => {
   return (
     <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
       {title && <div style={{ height: "30%" }}>{title}</div>}
-      {logo && (
+      {img && (
         <div
           style={{
             height: "30%",
@@ -16,7 +16,7 @@ const ItemsContainer = ({ title, items, logo }) => {
             marginBottom: 10
           }}
         >
-          <img className="item-circle small" src={logo} />
+          <img className="item-circle small" src={img} />
         </div>
       )}
       <div style={{ height: "70%", display: "flex", gap: 10 }}>
@@ -40,7 +40,7 @@ ItemsContainer.propTypes = {
       id: PropTypes.number.required,
     })
   ).required,
-  logo: PropTypes.string,
+  img: PropTypes.string,
 };
 
 export default ItemsContainer;
