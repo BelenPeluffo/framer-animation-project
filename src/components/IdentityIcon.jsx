@@ -2,9 +2,16 @@ import { motion } from "framer-motion";
 import { PropTypes } from "prop-types";
 import { useNavigate } from "react-router-dom";
 import "../assets/styles.css";
+import IdentityMiniCard from "./IdentityMiniCard";
+import { createPopper } from "@popperjs/core";
 
 const IdentityIcon = ({ size, item }) => {
   const navigate = useNavigate();
+  const iconId = item.type + item.id;
+  const identityCircle = document.querySelector(`#${iconId}`);
+  const tooltip = document.querySelector("#tooltip");
+
+  const popperInstance = createPopper(identityCircle, tooltip);
 
   const handleNavigation = () => {
     navigate(`/${item.type == "group" ? "groups" : "idols"}/${item.id}`);
@@ -25,7 +32,12 @@ const IdentityIcon = ({ size, item }) => {
       onClick={handleNavigation}
     >
       {/* Here we could add a Link element instead, so that the URL would be shown on the browser when hovering over */}
-      <div className={size === "big" ? "title" : "text"}>{item.name}</div>
+      <div id={iconId} className={size === "big" ? "title" : "text"}>
+        {item.name}
+      </div>
+      <div id="tooltip" role="tooltip">
+        <IdentityMiniCard />
+      </div>
     </motion.div>
   );
 };
