@@ -18,17 +18,19 @@ const IdentityIcon = ({ size, item }) => {
   const hideEvents = ["mouseleave", "blur"];
 
   showEvents.forEach((event) => {
-    identityCircle.addEventListener(
-      event,
-      toggleTooltipVisibility(tooltip, popperInstance, "show")
-    );
+    identityCircle &&
+      identityCircle.addEventListener(
+        event,
+        toggleTooltipVisibility(tooltip, popperInstance, "show")
+      );
   });
 
   hideEvents.forEach((event) => {
-    identityCircle.addEventListener(
-      event,
-      toggleTooltipVisibility(tooltip, popperInstance, "hide")
-    );
+    identityCircle &&
+      identityCircle.addEventListener(
+        event,
+        toggleTooltipVisibility(tooltip, popperInstance, "hide")
+      );
   });
 
   const handleNavigation = () => {
