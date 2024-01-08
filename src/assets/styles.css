@@ -25,6 +25,14 @@
   height: 100px;
 }
 
+.identity-card {
+  border: solid 1px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+#tooltip[data-show] {}
+
 .text,
 .title,
 .subtitle {
