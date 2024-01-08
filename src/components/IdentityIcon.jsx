@@ -3,17 +3,25 @@ import { PropTypes } from "prop-types";
 import { useNavigate } from "react-router-dom";
 import "../assets/styles.css";
 import IdentityMiniCard from "./IdentityMiniCard";
-import { Tooltip } from "@mui/material";
+import { Tooltip, styled, tooltipClasses } from "@mui/material";
 
 const IdentityIcon = ({ size, item }) => {
   const navigate = useNavigate();
+  const CustomTooltip = styled(({ className, ...props }) => (
+    <Tooltip {...props} classes={{ popper: className }} />
+  ))(({ theme }) => ({
+    [`& .${tooltipClasses.tooltip}`]: {
+      // backgroundColor: "rgba(0,0,0,0)",
+      padding: 0,
+    },
+  }));
 
   const handleNavigation = () => {
     navigate(`/${item.type == "group" ? "groups" : "idols"}/${item.id}`);
   };
 
   return (
-    <Tooltip title={<IdentityMiniCard item={item} />}>
+    <CustomTooltip title={<IdentityMiniCard item={item} />}>
       <motion.div
         className={`item-circle ${size}`}
         whileHover={{
@@ -30,7 +38,7 @@ const IdentityIcon = ({ size, item }) => {
         {/* Here we could add a Link element instead, so that the URL would be shown on the browser when hovering over */}
         <div className={size === "big" ? "title" : "text"}>{item.name}</div>
       </motion.div>
-    </Tooltip>
+    </CustomTooltip>
 
     // </div>
   );
