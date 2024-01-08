@@ -43,6 +43,8 @@ const Home = () => {
   const updateCategory = useMotionValue(true);
 
   useEffect(() => {
+    // This method will have to change to proper fetching:
+    setSearchResult(lastSearchedItems);
     animate(count, 30, {
       type: "tween",
       duration: 1,
@@ -107,7 +109,7 @@ const Home = () => {
         </div>
       </div>
       <div style={{ height: "40%", margin: 20, padding: 5 }}>
-        <ItemsContainer items={searchTerm ? searchResult : lastSearchedItems} />
+        <ItemsContainer items={searchResult} />
       </div>
     </div>
   );
