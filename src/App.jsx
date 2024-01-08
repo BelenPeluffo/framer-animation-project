@@ -10,9 +10,7 @@ function App() {
   const pathname = location.pathname;
 
   const handleClick = () => {
-    navigate(
-      pathname.includes("second") ? "/first-component" : "/second-component"
-    );
+    navigate("/");
   };
   return (
     <div className="main-container">
@@ -22,14 +20,14 @@ function App() {
           // Animations will change, but here's the start set-up
           variants={{
             initial: {
-              x: pathname.includes("first") ? 1000 : -1000,
+              x: pathname === "/" ? 1000 : -1000,
               height: "100%",
               width: "100%",
             },
             animate: { x: 0 },
             exit: {
               transition: {
-                x: pathname.includes("first") ? 1000 : -1000,
+                x: pathname !== "/" ? 1000 : -1000,
                 type: "spring",
               },
             },
@@ -46,7 +44,7 @@ function App() {
         <BottomBar
           actions={[
             <button key="move" style={{ margin: 20 }} onClick={handleClick}>
-              {pathname.includes("first") ? "Let's go!" : "Go back!"}
+              {"Go back!"}
             </button>,
           ]}
         />
