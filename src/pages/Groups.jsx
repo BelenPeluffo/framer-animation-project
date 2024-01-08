@@ -9,7 +9,7 @@ const Groups = () => {
     <ItemsContainer
       title={!id ? "Groups" : ""}
       items={getItems()}
-      logo={
+      img={
         id ? "src/assets/images/groupLogos/2560px-(G)I-dle_logo.svg.png" : ""
       }
     />
