@@ -12,3 +12,4 @@ The app will accept key and, in the future, mouse gestures, also.
 - `react-router-dom` for routing
 - `framer-motion` for animations
 - `prop-types` for typing props
+- `popperjs` for tooltips
