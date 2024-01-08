@@ -31,7 +31,13 @@
   border-radius: 4px;
 }
 
-#tooltip[data-show] {}
+#tooltip {
+  display: none;
+}
+
+#tooltip[data-show] {
+  display: block;
+}
 
 .text,
 .title,
