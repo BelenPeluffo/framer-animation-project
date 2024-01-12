@@ -1,7 +1,16 @@
+import { Typography } from "@mui/material";
 import { PropTypes } from "prop-types";
 
 const IdentityMiniCard = ({ item }) => {
-  return <div className="identity-card">{item.name}</div>;
+  return (
+    <div className="identity-card">
+      <div>
+        <Typography variant="h4">{item.name}</Typography>
+      </div>
+      <div>Holis</div>
+      <div>Yas</div>
+    </div>
+  );
 };
 
 IdentityMiniCard.propTypes = {

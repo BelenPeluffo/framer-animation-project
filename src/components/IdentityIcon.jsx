@@ -11,8 +11,10 @@ const IdentityIcon = ({ size, item }) => {
     <Tooltip {...props} classes={{ popper: className }} />
   ))(({ theme }) => ({
     [`& .${tooltipClasses.tooltip}`]: {
-      // backgroundColor: "rgba(0,0,0,0)",
+      backgroundColor: "#ff0000",
       padding: 0,
+      width: 150,
+      textAlign: "center",
     },
   }));
 
